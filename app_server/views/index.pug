@@ -8,42 +8,9 @@ block content
       .con-showcase-content
         .showcase-contents.flex
           .showcase-content.grids.grids-04
-            .con-cards
-              a(href='/books')
-                .card
-                  img(src='/' alt='') 
-                  | Think and Grow Rich
-            .con-cards
-              a(href='/books')
-                .card
-                  img(src='/' alt='') 
-                  | The Art of the Deal
-            .con-cards
-              a(href='/books')
-                .card
-                  img(src='/' alt='') 
-                  | Home Alone
-            .con-cards
-              a(href='/books')
-                .card
-                  img(src='/' alt='') 
-                  | Broad Way
-            .con-cards
-              a(href='/books')
-                .card
-                  img(src='/' alt='') 
-                  | Napoleon's Home
-            .con-cards
-              .card
-                img(src='/' alt='') 
-                | The Art of the Come Back
-            .con-cards
-              a(href='/books')
-                .card
-                  img(src='/' alt='') 
-                  | Rich Dad Poor Dad
-            .con-cards
-              a(href='/books')
-                .card
-                  img(src='/' alt='') 
-                  | Cashflow Quadrant
+            each collection in collections
+              .con-cards
+                a(href=`/books/${collection._id}`)
+                  .card
+                    img(src='/' alt='') 
+                    div= collection.title

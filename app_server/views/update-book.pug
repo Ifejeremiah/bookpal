@@ -1,7 +1,7 @@
 extends layout 
 block content 
   .con-showcase
-    h1.header Add a book your list of collections
+    h1.header Edit #{bookTitle}
     //- .danger= errorMessage
     .showcase
       .options
@@ -9,11 +9,11 @@ block content
           .entry-point.flex.flx-start.flx-dir
             .title.flex
               label(for="book-title") Title of Book: 
-              input(type="text" name='title' id='title')
+              input(type="text" name='title' id='title' value=`${bookTitle}`)
             .author.flex
               label(for="book-author") Author of Book:
-              input(type="text" name='author' id='author')
+              input(type="text" name='author' id='author' value=`${bookAuthor}`)
             .content.flex
               label(for="book-content") Content of Book:
-              textarea(name="content", cols="80", rows="6")
+              textarea(name="content", cols="80", rows="6")= bookContent
             input.btn(type="submit" value='Add book')

@@ -42,4 +42,4 @@ process.on('SIGINT', () => {
   });
 });
 
-// require('./locations');
+require('./books');

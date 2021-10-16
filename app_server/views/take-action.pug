@@ -2,9 +2,11 @@ extends layout
 
 block content 
   .con-showcase
-    h1.header Think and Grow Rich
+    h1.header #{bookTitle}
     .showcase 
       .options
         .links
-          .btn Update
-          .btn.danger Delete
+          a(href=`/actions/books/update/${bookId}`) 
+            .btn Update
+          a(href=`/actions/books/delete/${bookId}`)
+            .btn.danger Delete

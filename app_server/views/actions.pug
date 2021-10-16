@@ -4,50 +4,17 @@ block content
   .con-showcase
     .headers.flex.flx-spc-btn
       h1.header #{username}, you can take actions on your books!
-      a(href="/add-books") 
-        .btn Add book to collection
+      a(href="/actions/books/add") 
+        .btn Add a book to collection
 
     .showcase
       h1.showcase-header Here are your collections
       .con-showcase-content
         .showcase-contents.flex
           .showcase-content.grids.grids-04
-            .con-cards
-              a(href='/books/take-action')
-                .card
-                  img(src='/' alt='') 
-                  | Think and Grow Rich
-            .con-cards
-              a(href='/books/take-action')
-                .card
-                  img(src='/' alt='') 
-                  | The Art of the Deal
-            .con-cards
-              a(href='/books/take-action')
-                .card
-                  img(src='/' alt='') 
-                  | Home Alone
-            .con-cards
-              a(href='/books/take-action')
-                .card
-                  img(src='/' alt='') 
-                  | Broad Way
-            .con-cards
-              a(href='/books/take-action')
-                .card
-                  img(src='/' alt='') 
-                  | Napoleon's Home
-            .con-cards
-              .card
-                img(src='/' alt='') 
-                | The Art of the Come Back
-            .con-cards
-              a(href='/books/take-action')
-                .card
-                  img(src='/' alt='') 
-                  | Rich Dad Poor Dad
-            .con-cards
-              a(href='/books/take-action')
-                .card
-                  img(src='/' alt='') 
-                  | Cashflow Quadrant
+           each collection in collections
+              .con-cards
+                a(href=`/actions/books/book/${collection._id}`)
+                  .card
+                    img(src='/' alt='') 
+                    div= collection.title
